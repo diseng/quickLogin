@@ -3,7 +3,9 @@ use ssh to login server via shellscript
 
 ##1.how to install
 
-`sh -c "$(curl -fsSL https://raw.githubusercontent.com/diseng/quickLogin/master/quickLogin-install.sh)"`
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/diseng/quickLogin/master/quickLogin-install.sh)"
+```
 
 ##2.how to use
 
