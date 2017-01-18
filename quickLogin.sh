@@ -1,18 +1,18 @@
 #!/bin/sh
 
-function show()
+show()
 {
 	grep -e "Host [a-zA-Z1-9].*" ~/.ssh/config|awk '{print $2}'|cat -n
 }
 
-function init()
+init()
 {
 	softwareCheck
 	sshInit
 	echo "3.initialization succeeded，do 's help' to see help"	
 }
 
-function sshInit()
+sshInit()
 {
 	echo "2.init ssh config"
 	if [ ! -d ~/.ssh ]; then
@@ -46,7 +46,7 @@ function sshInit()
 	fi
 }
 
-function softwareCheck()
+softwareCheck()
 {
 	echo "1.check if the necessary software is installed"
 	type ssh-keygen >/dev/null 2>&1 || { echo >&2 "there is no 'ssh-keygen' found, please install first"; exit 1; }
@@ -55,7 +55,7 @@ function softwareCheck()
 	echo "    ssh-copy-id installed ✔"
 }
 
-function login()
+login()
 {
 #	gbk
 	var=$(echo $1 | bc 2>/dev/null)
@@ -68,7 +68,7 @@ function login()
 #	utf8
 }
 
-function add()
+add()
 {	
 	if [ $# = 3 ]; then
 		ssh-copy-id -i ~/.ssh/id_rsa.pub `whoami`@$3
@@ -90,7 +90,7 @@ function add()
 	echo "add done"
 }
 
-function help()
+help()
 {
 	echo "To use this script, make sure the machine contains ssh-keygen and ssh-copy-id"
 	echo "1) s init                            --Script Environment Initialization (Execute on first use)"
