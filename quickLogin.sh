@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 function show()
 {
@@ -93,11 +93,14 @@ function add()
 function help()
 {
 	echo "To use this script, make sure the machine contains ssh-keygen and ssh-copy-id"
-	echo "1) s init --Script Environment Initialization (Execute on first use)"
-	echo "2) s add Host HostName [User] [Port] --Add the login machine information;a)Host for the custom machine tag b)HostName is the machine IP or machine name c)User and Port are the machine user name and SSH port number which are optional，default vallue is the current user name and port 22"
-	echo "3) s --display the login list"
-	echo "4) s number|Host --Use the number or Host which is the result of 's' to quickly login into the machine"
-	echo "5) s help --show the help infomation"
+	echo "1) s init                            --Script Environment Initialization (Execute on first use)"
+	echo "2) s add Host HostName [User] [Port] --Add the login machine information;"
+    echo "                                     --a)Host for the custom machine tag"
+	echo "                                     --b)HostName is the machine IP or machine name"
+    echo "                                     --c)User and Port are the machine user name and SSH port number which are optional(default vallue is the current user name and port 22)"
+	echo "3) s                                 --display the login list"
+	echo "4) s number|Host                     --Use the number or Host which is the result of 's' to quickly login into the machine"
+	echo "5) s help                            --show the help infomation"
 }
 
 
